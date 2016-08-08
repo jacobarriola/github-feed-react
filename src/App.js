@@ -30,13 +30,17 @@ var Header = React.createClass({
 var UserGithubEvents = React.createClass({
   getInitialState: function() {
     return {
-      items: []
+      items: [],
+      userAvatar: ''
     };
   },
   componentDidMount: function() {
     this.serverRequest = $.get(this.props.source, function (result) {
+      let userInfoObject = result[0].actor;
+      console.log(userInfoObject);
       this.setState({
-        items: result
+        items: result,
+        userAvatar: userInfoObject.avatar_url
       });
     }.bind(this));
   },
@@ -52,6 +56,7 @@ var UserGithubEvents = React.createClass({
     return (
       <div>
         <h2>Public Github Events for Jacob Arriola</h2>
+        <img src={this.state.userAvatar} alt="Jacobt Arriola" className="avatar"/>
         <ul className="list-of-items">
           {Object.keys(this.state.items).map(this.renderItems)}
         </ul>
@@ -72,7 +77,7 @@ var Item = React.createClass({
             ID: {this.props.details.id}
           </li>
           <li>
-            Repo: <a href={this.props.details.repo.url}>
+            Repo: <a href={'https://github.com/' + this.props.details.repo.name}>
               {this.props.details.repo.name}
             </a>
           </li>

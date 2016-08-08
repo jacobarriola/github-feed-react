@@ -42,3 +42,13 @@
   margin-left: auto;
   margin-right: auto;
 }
+
+img {
+  max-width: 100%;
+}
+
+.avatar {
+  max-width: 150px;
+  border-radius: 50%;
+  margin-bottom: 1.25em;
+}
