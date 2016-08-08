@@ -37,7 +37,6 @@ var UserGithubEvents = React.createClass({
   componentDidMount: function() {
     this.serverRequest = $.get(this.props.source, function (result) {
       let userInfoObject = result[0].actor;
-      console.log(userInfoObject);
       this.setState({
         items: result,
         userAvatar: userInfoObject.avatar_url
@@ -66,20 +65,24 @@ var UserGithubEvents = React.createClass({
 });
 
 var Item = React.createClass({
+
   render : function() {
     return (
       <li>
         <ul className="item-list">
           <li>
-            Type: {this.props.details.type}
+            Event type: {this.props.details.type}
           </li>
           <li>
-            ID: {this.props.details.id}
+            Event ID: {this.props.details.id}
           </li>
           <li>
             Repo: <a href={'https://github.com/' + this.props.details.repo.name}>
               {this.props.details.repo.name}
             </a>
+          </li>
+          <li>
+            Date: {this.props.details.created_at}
           </li>
         </ul>
       </li>
