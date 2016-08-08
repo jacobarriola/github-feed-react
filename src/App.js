@@ -9,7 +9,7 @@ class App extends Component {
       <div className="App">
         <Header/>
         <div className="container">
-          <UserGithubEvents source="https://api.github.com/users/jacobarriola/events?per_page=3"/>
+          <UserGithubEvents source="https://api.github.com/users/jacobarriola/events?per_page=10"/>
         </div>
       </div>
     );
@@ -72,7 +72,9 @@ var Item = React.createClass({
             ID: {this.props.details.id}
           </li>
           <li>
-            Repo: {this.props.details.repo.name}
+            Repo: <a href={this.props.details.repo.url}>
+              {this.props.details.repo.name}
+            </a>
           </li>
         </ul>
       </li>
