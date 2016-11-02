@@ -3,20 +3,17 @@
   "version": "0.0.1",
   "private": true,
   "devDependencies": {
-    "react-addons-create-fragment": "^15.3.0",
-    "react-scripts": "0.2.1"
+    "react-scripts": "0.7.0"
   },
   "dependencies": {
-    "jquery": "^3.1.0",
-    "react": "^15.2.1",
-    "react-dom": "^15.2.1"
+    "moment": "^2.15.1",
+    "react": "^15.3.2",
+    "react-dom": "^15.3.2"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": "./node_modules/react-scripts/config/eslint.js"
   }
 }
