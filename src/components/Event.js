@@ -9,7 +9,7 @@ class Event extends React.Component {
 		return (
 			<li className="event-card">
 				<h2>Repo: <a href={url}>{repo.name}</a></h2>
-				<p>{type} opened {moment.utc( created_at, "YYYYMMDD" ).fromNow()}</p>
+				<p>{type} - {moment.utc( created_at, "YYYYMMDD" ).fromNow()}</p>
 			</li>
 		)
 	}
