@@ -5,7 +5,7 @@ class Header extends React.Component {
 		return (
 			<header>
 				<h1>Welcome</h1>
-				<p>Please enter a GitHub username</p>
+				<p>Please enter a GitHub username to lookup the last 10 GitHub events.</p>
 			</header>
 		)
 	}
