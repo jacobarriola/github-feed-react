@@ -13,17 +13,17 @@ class Events extends React.Component {
         }
     }
 
-    componentWillMount() {
-        this.loadEvents();
-    }
-
-    loadEvents() {
-        fetch(`https://api.github.com/users/jacobarriola/events?per_page=10`)
-            .then(response => response.json())
-            .then(items => {
-                this.setState({ items });
-        });
-    }
+    // componentWillMount() {
+    //     this.loadEvents();
+    // }
+    //
+    // loadEvents() {
+    //     fetch(`https://api.github.com/users/jacobarriola/events?per_page=10`)
+    //         .then(response => response.json())
+    //         .then(items => {
+    //             this.setState({ items });
+    //     });
+    // }
 
     searchUser(user) {
         const localStorageUser = localStorage.getItem(`search-${user}`);
