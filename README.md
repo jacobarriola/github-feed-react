@@ -22,3 +22,4 @@ https://reactforbeginners.com
 * Create a filter allow users to fetch certain types of data
 * ~~Create a form to make the username dynamic~~
 * Show the user info
+* ~~Add localStorage~~
