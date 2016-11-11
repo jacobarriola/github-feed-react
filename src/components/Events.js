@@ -26,11 +26,18 @@ class Events extends React.Component {
     }
 
     searchUser(user) {
+        const localStorageUser = localStorage.getItem(`search-${user}`);
+        if ( localStorageUser ) {
+            const localUser = JSON.parse(localStorageUser);
+            this.setState({ items: localUser });
+            return;
+        }
         fetch(`https://api.github.com/users/${user}/events?per_page=10`)
             .then(response => response.json())
             .then(items => {
-                this.setState({ items })
-        });
+                this.setState({ items });
+                localStorage.setItem(`search-${user}`, JSON.stringify(items));
+            });
     }
 
     render() {
