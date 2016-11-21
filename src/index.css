@@ -1,4 +1,4 @@
-
+@import url('https://fonts.googleapis.com/css?family=Roboto');
 
 html {
   box-sizing: border-box;
@@ -9,9 +9,23 @@ html {
 }
 
 body {
-  margin: 0;
-  padding: 0;
-  font-family: sans-serif;
+	font-family: 'Roboto';
+  	margin: 0;
+  	padding: 0;
+  	font-family: sans-serif;
+}
+
+p {
+	font-family: 'Roboto';
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: 'Roboto';
 }
 
 header,
@@ -28,13 +42,22 @@ header,
 }
 
 .events {
-  list-style: none;
-  padding-left: 0;
+	display: flex;
+	flex-wrap: wrap;
+	list-style: none;
+	padding-left: 0;
 }
 
 .event-card {
-  display: block;
-  border: 1px solid #eee;
-  margin-bottom: 1.25em;
-  padding: .75em;
+	flex: 1 1 100%;
+	border: 1px solid #eee;
+	margin-bottom: 1.25em;
+	padding: .75em;
+}
+
+@media (min-width: 800px) {
+	.event-card {
+		flex: 0 1 30%;
+		margin: 1.25em 1.1111%;
+	}
 }

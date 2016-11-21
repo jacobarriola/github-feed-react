@@ -10,19 +10,26 @@ class Events extends React.Component {
 
         this.state = {
             items: []
-        }
+		}
     }
 
     // componentWillMount() {
     //     this.loadEvents();
     // }
-    //
+	//
     // loadEvents() {
-    //     fetch(`https://api.github.com/users/jacobarriola/events?per_page=10`)
+	// 	const localStorageUser = localStorage.getItem(`search-jacobarriola`);
+    //     if ( localStorageUser ) {
+    //         const localUser = JSON.parse(localStorageUser);
+    //         this.setState({ items: localUser });
+    //         return;
+    //     }
+    //     fetch(`https://api.github.com/users/jacobarriola/events?per_page=12`)
     //         .then(response => response.json())
     //         .then(items => {
     //             this.setState({ items });
-    //     });
+    //             localStorage.setItem(`search-jacobarriola`, JSON.stringify(items));
+    //         });
     // }
 
     searchUser(user) {
@@ -32,7 +39,7 @@ class Events extends React.Component {
             this.setState({ items: localUser });
             return;
         }
-        fetch(`https://api.github.com/users/${user}/events?per_page=10`)
+        fetch(`https://api.github.com/users/${user}/events?per_page=12`)
             .then(response => response.json())
             .then(items => {
                 this.setState({ items });
